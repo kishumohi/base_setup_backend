@@ -34,7 +34,7 @@
 }
 ```
 
-## model create command
+## model create command.
 
 ```
 npx sequelize model:generate --name City --attributes name:string
