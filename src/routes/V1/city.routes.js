@@ -7,4 +7,7 @@ const router = express.Router();
 // /api/v1/cities POST
 router.post("/", CityMiddlewares, CityController.createCity);
 
+// /api/v1/cities GET
+router.get("/", CityController.getCities);
+
 module.exports = router;
