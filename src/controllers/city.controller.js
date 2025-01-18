@@ -41,8 +41,24 @@ async function getCity(req, res) {
   }
 }
 
+/**
+ * DELETE : /cities/:id
+ * req-body {}
+ */
+async function destroyCity(req, res) {
+  try {
+    const airplaines = await CityService.destroyCity(req.params.id);
+    SuccessResponse.data = airplaines;
+    return res.status(StatusCodes.OK).json(SuccessResponse);
+  } catch (error) {
+    ErrorResponse.error = error;
+    return res.status(error.statusCode).json(ErrorResponse);
+  }
+}
+
 module.exports = {
   createCity,
   getCities,
   getCity,
+  destroyCity,
 };
