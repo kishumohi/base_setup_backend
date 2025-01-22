@@ -38,6 +38,7 @@
 
 ```
 npx sequelize model:generate --name City --attributes name:string
+npx sequelize migration:generate --name update-city-airport-association
 ```
 
 ```
@@ -74,4 +75,10 @@ Options:
   --help     Show help                                                            [boolean]
 
 Please specify a command
+```
+
+### Search foreign key contraint in mysql table
+
+```javascript
+select * from INFORMATION_SCHEMA.KEY_COLUMN_USAGE WHERE TABLE_NAME = "airports" AND CONSTRAINT_SCHEMA = "flights";
 ```
